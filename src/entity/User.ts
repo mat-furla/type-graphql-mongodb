@@ -1,0 +1,26 @@
+import { Entity, BaseEntity, Column, ObjectIdColumn } from "typeorm";
+import { ObjectType, Field } from "type-graphql";
+
+@ObjectType()
+@Entity()
+export class User extends BaseEntity {
+    @Field()
+    //@PrimaryGeneratedColumn('uuid')
+    @ObjectIdColumn()
+    _id: string;
+
+    @Field()
+    @Column()
+    firstName: string;
+
+    @Field()
+    @Column()
+    lastName: string;
+
+    @Field()
+    @Column("text", { unique: true })
+    mail: string;
+
+    @Column()
+    password: string;
+}
