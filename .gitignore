@@ -6,6 +6,9 @@ package-lock.json
 # dotenv environment variables file
 .env
 
+# DATABASE
+/mdb-data
+
 # Logs
 logs
 *.log
