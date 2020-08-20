@@ -2,10 +2,9 @@ import { Entity, BaseEntity, Column, ObjectIdColumn } from "typeorm";
 import { ObjectType, Field } from "type-graphql";
 
 @ObjectType()
-@Entity()
+@Entity("users")
 export class User extends BaseEntity {
     @Field()
-    //@PrimaryGeneratedColumn('uuid')
     @ObjectIdColumn()
     _id: string;
 
@@ -18,9 +17,9 @@ export class User extends BaseEntity {
     lastName: string;
 
     @Field()
-    @Column("text", { unique: true })
-    mail: string;
-
     @Column()
+    email: string;
+
+    @Column("text", { nullable: false, select: false })
     password: string;
 }

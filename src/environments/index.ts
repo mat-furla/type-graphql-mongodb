@@ -16,7 +16,10 @@ const MONGO_URL =
 	`mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DATABASE}`
 
 // bcrypt
-const BCRYPT_SALT: number = +process.env.BCRYPT_SALT! || 12
+//const BCRYPT_SALT: number = +process.env.BCRYPT_SALT! || 12
+
+const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || 'default'
+const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'default'
 
 export {
 	DOMAIN,
@@ -27,5 +30,6 @@ export {
 	MONGO_PORT,
 	MONGO_DATABASE,
 	MONGO_URL,
-	BCRYPT_SALT,
+	JWT_ACCESS_SECRET,
+	JWT_REFRESH_SECRET,
 }
